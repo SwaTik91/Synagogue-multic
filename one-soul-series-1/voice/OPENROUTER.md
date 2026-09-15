@@ -27,7 +27,7 @@ Grok / MiniMax / Fish пробовали: русский есть, но слаб
 |---|---|---|
 | `renders/shushen-a.mp3` | 10 с | ~18.5 с |
 | `renders/shushen-b.mp3` | 7 с | ~11.3 с |
-| `renders/shushen-c.mp3` | 2 с | ~3.9 с |
+| `renders/shushen-c.mp3` | 2 с | ~4.7 с, нежный тон |
 | `renders/father-d.mp3` | 5 с | ~9.6 с |
 | `renders/father-e.mp3` | 2 с | ~5.3 с |
 
