@@ -26,8 +26,8 @@ MCP подключён: модель `sync_so` (Sync Lipsync 3). Cost-preflight 
 https://github.com/SwaTik91/Synagogue-multic/raw/cursor/one-soul-series1-bible-28ef/one-soul-series-1/preview/piece-end-wan27.mp4  
 https://github.com/SwaTik91/Synagogue-multic/raw/cursor/one-soul-series1-bible-28ef/one-soul-series-1/preview/piece-end-kling30.mp4
 
-Полный живой пилот: `preview/series1-wan.mp4` (~74 с).  
-Завязка отдельно: `preview/series1-wan-open.mp4` (не переснимать). Хвост после плашки — stills завязки (`c-04-talk`, `c-father-cu`, `c-defend-cu`, `c-05-defends`, `c-06-vay`) плюс `c-28-family` для взрослого Ихила. Финал `piece-end-wan27` не трогать.
+Полный живой пилот `preview/series1-wan.mp4` (~72 с) **утверждён — не переснимать**.  
+Завязка: `preview/series1-wan-open.mp4`. Хвост: stills завязки + `c-28-family`. Финал: `piece-end-wan27`.
 
 ## Листы героев на будущее
 
@@ -42,6 +42,7 @@ Wan 2.7 Elements может не подхватить — для него лис
 
 ## Чего не делать
 
+- Не переснимать утверждённый `preview/series1-wan.mp4`.
 - Не генерировать голос заново в Higgsfield Audio.
 - Не отдавать весь 76-секундный ролик одним куском.
 - Не подменять живой монтаж статичным RMS-флапом целиком.
