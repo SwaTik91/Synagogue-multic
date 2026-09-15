@@ -165,7 +165,8 @@
 - монтаж: `voice/TIMELINE.md`
 - субтитры: `voice/series1.srt`
 - чистый текст в TTS: `voice/takes/`
-- слуховой монтаж: `preview/series1-with-vo.mp4`
+- слуховой монтаж (статика): `preview/series1-with-vo.mp4`
+- вариант А, живые кадры: `preview/series1-variant-a-living.mp4` и `VARIANT-A.md`
 
 Не генерировать 50 секунд одним промптом.
 
