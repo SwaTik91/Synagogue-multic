@@ -37,3 +37,11 @@
 | `style/c-father-scolds.png` | отец говорит |
 
 Если лицо не узнаётся за полсекунды — кадр брак, как в `BIBLE.md`.
+
+## Что смотреть
+
+`preview/series1-variant-c.mp4` (~68 с)
+
+https://github.com/SwaTik91/Synagogue-multic/raw/cursor/one-soul-series1-bible-28ef/one-soul-series-1/preview/series1-variant-c.mp4
+
+Клипы: `preview/variant-c-clips/`. Склейка: `preview/mux-c.py`. Голоса те же, что в Б.
