@@ -40,7 +40,7 @@
 
 ## Что смотреть
 
-`preview/series1-variant-c.mp4` (~68 с)
+`preview/series1-variant-c.mp4` (~76 с, речь 0.88, больше склеек)
 
 https://github.com/SwaTik91/Synagogue-multic/raw/cursor/one-soul-series1-bible-28ef/one-soul-series-1/preview/series1-variant-c.mp4
 
