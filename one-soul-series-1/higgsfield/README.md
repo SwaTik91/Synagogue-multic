@@ -33,7 +33,19 @@ Higgsfield нужен, чтобы посадить рот на уже сняты
 - Не отдавать весь 76-секундный ролик одним куском: лица и мизансцена поедут.
 - Не Soul-ID «с нуля» вместо наших `style/c-*.png`, пока не решим менять замок лиц.
 
-## Потом из агента
+## MCP в Cursor
 
-MCP Higgsfield: `https://mcp.higgsfield.ai/mcp`  
-Если подключишь его в Cursor к этому проекту — следующий заход смогу крутить LipSync сам, с твоих кредитов.
+Конфиг уже в репозитории: `.cursor/mcp.json` → `https://mcp.higgsfield.ai/mcp`.  
+Ключ не нужен. OAuth через твой аккаунт Higgsfield. Каждая генерация через MCP снимает кредиты.
+
+**Десктоп Cursor:** Customize → Marketplace → Higgsfield → Add и войди.  
+Или после `git pull` открой проект — подтянется `.cursor/mcp.json`, затем подтверди вход.
+
+**Этот облачный агент** сам файл не подхватывает. Добавь сервер здесь:
+
+1. [cursor.com/agents](https://cursor.com/agents) → этот чат → меню **MCP**.
+2. Add custom HTTP: имя `higgsfield`, URL `https://mcp.higgsfield.ai/mcp`.
+3. Включи и авторизуй Higgsfield в окне входа.
+4. Напиши сюда «готово» — проверю баланс и посажу рот на два пакета выше.
+
+Команде: Dashboard → Integrations & MCP — тот же URL, тогда сервер будет у всех агентов.
