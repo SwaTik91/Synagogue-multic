@@ -35,6 +35,7 @@
 | `style/c-family-lock.png` | семья в объёме, та же мизансцена |
 | `style/c-opener-judge.png` | завязка: бракует фото |
 | `style/c-father-scolds.png` | отец говорит |
+| `style/hf-sheets/` | 3D-листы Шушэн / отец / Ихил 23 и 28 для Higgsfield |
 
 Если лицо не узнаётся за полсекунды — кадр брак, как в `BIBLE.md`.
 

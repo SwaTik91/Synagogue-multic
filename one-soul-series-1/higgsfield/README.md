@@ -28,6 +28,12 @@ https://github.com/SwaTik91/Synagogue-multic/raw/cursor/one-soul-series1-bible-2
 
 Если кусок ок — тем же способом следующие реплики, не весь 76-секундный ролик сразу.
 
+## Листы героев на будущее
+
+3D character sheets лежат в `style/hf-sheets/`. В Higgsfield они сохранены как Elements: **Shushen**, **Father**, **Ikhil-23**, **Ikhil-28**.
+
+Wan 2.7 Elements может не подхватить — для него лист класть стартовым кадром. Kling / Seedance / картинки зовут героя по имени. Soul не тренировать.
+
 ## Пакеты для следующих реплик
 
 В `01-end/` и `02-around-50s/`: `picture.mp4` + `voice.mp3`.  
