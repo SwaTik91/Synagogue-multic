@@ -27,7 +27,7 @@ https://github.com/SwaTik91/Synagogue-multic/raw/cursor/one-soul-series1-bible-2
 https://github.com/SwaTik91/Synagogue-multic/raw/cursor/one-soul-series1-bible-28ef/one-soul-series-1/preview/piece-end-kling30.mp4
 
 Полный живой пилот: `preview/series1-wan.mp4` (~74 с).  
-Завязка отдельно: `preview/series1-wan-open.mp4`. Хвост: плашка Pillow → дом 28 → отец / защита / вай → финал `piece-end-wan27.mp4`.
+Завязка отдельно: `preview/series1-wan-open.mp4` (не переснимать). Хвост после плашки — новые крупные 28-е кадры `style/c-28-*.png`, не старые тёмные широкие stills.
 
 ## Листы героев на будущее
 

@@ -48,7 +48,8 @@ https://github.com/SwaTik91/Synagogue-multic/raw/cursor/one-soul-series1-bible-2
 Клипы: `preview/variant-c-clips/`. Склейка: `preview/mux-c.py`. Голоса те же, что в Б.
 
 Живой пилот Wan целиком: `preview/series1-wan.mp4`.  
-Завязка отдельно: `preview/series1-wan-open.mp4`.
+Завязка отдельно: `preview/series1-wan-open.mp4` (утверждена, не трогать).  
+Хвост после плашки «Несколько лет спустя» — новые крупные 28-е кадры `style/c-28-*.png`.
 
 Рот на двух репликах Шушэн — Higgsfield Sync Lipsync 3, голос наш (Sulafat 0.88).  
 Врезка: `preview/mux-c-lipsync.py`. Около 50 с — крупный план; финал (~1:06) — тот же двухплан, хвост Sync обрезан, чтобы руки не поплыли.
