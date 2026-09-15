@@ -14,7 +14,8 @@
 | Файл | Что смотреть |
 |---|---|
 | `preview/series1-with-vo.mp4` | статика + голос, черновик |
-| `preview/series1-variant-a-living.mp4` | **вариант А**: живые кадры + те же голоса |
+| `preview/series1-variant-a-living.mp4` | вариант А: первый живой проход |
+| `preview/series1-variant-b.mp4` | **вариант Б**: тот же пилот после правок рта, руки и плашки времени |
 
 Сырые клипы: `preview/variant-a-clips/01.mp4` … `07.mp4`. Плашка 08 без движения.
 
