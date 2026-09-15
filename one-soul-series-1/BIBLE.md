@@ -161,9 +161,11 @@
 
 - движение: `motion/MOTION.md` + конечные кадры в `motion/ends/`
 - голоса: `voice/VOICE-CAST.md`, партии `voice/SHUSHEN.md` и `voice/FATHER.md`
+- готовые дубли OpenRouter: `voice/renders/`
 - монтаж: `voice/TIMELINE.md`
 - субтитры: `voice/series1.srt`
 - чистый текст в TTS: `voice/takes/`
+- слуховой монтаж: `preview/series1-with-vo.mp4`
 
 Не генерировать 50 секунд одним промптом.
 
