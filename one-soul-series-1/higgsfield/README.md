@@ -26,8 +26,8 @@ MCP подключён: модель `sync_so` (Sync Lipsync 3). Cost-preflight 
 https://github.com/SwaTik91/Synagogue-multic/raw/cursor/one-soul-series1-bible-28ef/one-soul-series-1/preview/piece-end-wan27.mp4  
 https://github.com/SwaTik91/Synagogue-multic/raw/cursor/one-soul-series1-bible-28ef/one-soul-series-1/preview/piece-end-kling30.mp4
 
-Завязка уже собрана тем же способом: `preview/series1-wan-open.mp4` (~31 с, четыре куска).  
-Если ок — дальше плашка «несколько лет спустя» и реплики отца, не весь хвост сразу.
+Полный живой пилот: `preview/series1-wan.mp4` (~74 с).  
+Завязка отдельно: `preview/series1-wan-open.mp4`. Хвост: плашка Pillow → дом 28 → отец / защита / вай → финал `piece-end-wan27.mp4`.
 
 ## Листы героев на будущее
 
