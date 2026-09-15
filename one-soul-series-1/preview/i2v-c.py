@@ -13,8 +13,8 @@ from pathlib import Path
 
 ROOT = Path("/workspace/one-soul-series-1")
 STYLE = ROOT / "style"
-OUT = Path("/tmp/i2v-c")
-JOBS_PATH = Path("/tmp/i2v-c-jobs.json")
+OUT = Path("/tmp/i2v-c2")
+JOBS_PATH = Path("/tmp/i2v-c2-jobs.json")
 API = "https://openrouter.ai/api/v1/videos"
 MODEL = "kwaivgi/kling-v3.0-std"
 
@@ -24,96 +24,103 @@ def data_uri(path: Path) -> str:
     return "data:image/png;base64," + base64.b64encode(raw).decode("ascii")
 
 
+MOVE = (
+    "Photoreal cinematic 3D sitcom. BIG motion: camera pushes or orbits, "
+    "the actor turns, gestures, leans. Lips talk. Fabric and hair move. "
+    "Not a still photo. Keep the same faces and clothes."
+)
+
 JOBS = [
     {
-        "id": "01",
-        "duration": 7,
+        "id": "01w",
+        "duration": 4,
         "first": STYLE / "c-opener-judge.png",
+        "last": STYLE / "c-phone-cu.png",
+        "prompt": MOVE + " Camera rushes from the sofa wide into the phone. She frowns and shakes her head. No joyful wave.",
+    },
+    {
+        "id": "01c",
+        "duration": 4,
+        "first": STYLE / "c-phone-cu.png",
         "last": STYLE / "c-01-end.png",
-        "prompt": (
-            "Photoreal cinematic 3D. The mother frowns at a photo on her phone, "
-            "both hands stay on the phone, no waving, no smile. The son sips tea. "
-            "Slow camera push in. Mouths closed except tiny natural motion. "
-            "Keep faces and clothes identical."
-        ),
+        "prompt": MOVE + " Close on the phone. Thumb flicks the photo. She scowls. Pull back a little to the sofa.",
     },
     {
-        "id": "02",
-        "duration": 10,
+        "id": "02t",
+        "duration": 6,
         "first": STYLE / "c-02-phone.png",
-        "last": STYLE / "c-02-reject.png",
-        "prompt": (
-            "Photoreal cinematic 3D. The mother talks on the phone, lips move as she "
-            "speaks, then she looks at a photo and rejects it with a frown. "
-            "The son stays shy with his tea. Natural hand motion. No identity change."
-        ),
+        "last": STYLE / "c-talk-cu.png",
+        "prompt": MOVE + " She talks on the phone with energy, free hand chopping the air, camera pushes into a close-up.",
     },
     {
-        "id": "02b",
-        "duration": 8,
+        "id": "02s",
+        "duration": 4,
+        "first": STYLE / "c-son-look.png",
+        "last": STYLE / "c-son-look.png",
+        "prompt": MOVE + " The shy son sips tea, glances sideways, tiny embarrassed smile. Camera slowly circles.",
+    },
+    {
+        "id": "02r",
+        "duration": 5,
+        "first": STYLE / "c-02-reject.png",
+        "last": STYLE / "c-phone-cu.png",
+        "prompt": MOVE + " She rejects the photo, shakes her head, camera snaps closer to the screen.",
+    },
+    {
+        "id": "02p",
+        "duration": 6,
         "first": STYLE / "c-02-reject.png",
         "last": STYLE / "c-02-proud.png",
-        "prompt": (
-            "Photoreal cinematic 3D. The mother finishes rejecting a photo, then "
-            "softens and looks proudly at her son, hand toward her heart. "
-            "Lips move while speaking. Son stays still. Same faces."
-        ),
+        "prompt": MOVE + " From disgust to pride: she turns to her son, hand to her heart, warm push-in.",
     },
     {
         "id": "03",
-        "duration": 5,
+        "duration": 4,
         "first": STYLE / "c-03-silent.png",
         "last": STYLE / "c-03-silent.png",
-        "prompt": (
-            "Photoreal cinematic 3D. Silent tense family. Tiny breathing only. "
-            "Father mouth stays CLOSED, hands stay on the armchair. "
-            "No talking. Slow subtle camera drift. Same faces."
-        ),
+        "prompt": "Photoreal 3D. Tense silent family. Slow dramatic push-in. Father mouth CLOSED, hands on the chair. Breathing only.",
     },
     {
-        "id": "04",
-        "duration": 10,
+        "id": "04m",
+        "duration": 5,
         "first": STYLE / "c-father-scolds.png",
         "last": STYLE / "c-04-talk.png",
-        "prompt": (
-            "Photoreal cinematic 3D. The father talks angrily but naturally: "
-            "jaw and lips open and close as if speaking words, not a constant scream. "
-            "Right hand stays a normal human hand, no melting, no table slam. "
-            "Keep the same face, mustache, navy vest."
-        ),
+        "prompt": MOVE + " Father talks, leans forward, hand chops the air. Normal five fingers, no melted hand, no table slam.",
     },
     {
-        "id": "05",
-        "duration": 10,
+        "id": "04c",
+        "duration": 6,
+        "first": STYLE / "c-04-talk.png",
+        "last": STYLE / "c-father-cu.png",
+        "prompt": MOVE + " Camera slams into his face as he points and speaks. Mouth talks, not a frozen scream. Hand stays a real hand.",
+    },
+    {
+        "id": "05w",
+        "duration": 6,
         "first": STYLE / "c-05-defends.png",
-        "last": STYLE / "c-05-defends.png",
-        "prompt": (
-            "Photoreal cinematic 3D close-up. The mother talks and gestures with "
-            "the raised hand, lips sync to speech, phone stays in the other hand. "
-            "Same burgundy scarf and teal dress. No extra people."
-        ),
+        "last": STYLE / "c-defend-cu.png",
+        "prompt": MOVE + " She argues, steps in, camera orbits to a close-up. Phone stays in one hand.",
+    },
+    {
+        "id": "05c",
+        "duration": 7,
+        "first": STYLE / "c-defend-cu.png",
+        "last": STYLE / "c-talk-cu.png",
+        "prompt": MOVE + " Close-up argument. She gestures hard, lips talking, slight camera shake energy. Same woman.",
     },
     {
         "id": "06",
-        "duration": 5,
+        "duration": 6,
         "first": STYLE / "c-06-vay.png",
         "last": STYLE / "c-06-vay.png",
-        "prompt": (
-            "Photoreal cinematic 3D. The father is shocked, both hands up in a shrug, "
-            "lips move as he speaks a short outburst, not a frozen scream. "
-            "Hands stay normal five-fingered hands. Same face and vest."
-        ),
+        "prompt": MOVE + " Father throws both hands up, leans back, talks. Hands stay normal. Camera push then slight pull.",
     },
     {
         "id": "07",
         "duration": 5,
         "first": STYLE / "c-07-dont.png",
         "last": STYLE / "c-07-dont.png",
-        "prompt": (
-            "Photoreal cinematic 3D. The mother points at her husband and finishes "
-            "speaking firmly. He sits frozen, mouth closed. Small head motion only. "
-            "Same two faces, same clothes."
-        ),
+        "prompt": MOVE + " She jabs a finger at him and finishes the line. He flinches then freezes. Punchy, not a still.",
     },
 ]
 

@@ -11,7 +11,8 @@ ROOT = Path("/workspace/one-soul-series-1")
 CLIPS = ROOT / "preview" / "variant-c-clips"
 VO = ROOT / "voice" / "renders"
 STYLE = ROOT / "style"
-I2V = Path("/tmp/i2v-c")
+I2V = Path("/tmp/i2v-c2")
+VO_SLOW = ROOT / "voice" / "renders" / "slow"
 WORK = Path("/tmp/mux-c")
 OUT = ROOT / "preview" / "series1-variant-c.mp4"
 ART = Path("/opt/cursor/artifacts/series1-variant-c.mp4")
@@ -90,15 +91,20 @@ def take_clip(name: str, still: Path, seconds: float) -> Path:
 def main() -> None:
     WORK.mkdir(parents=True, exist_ok=True)
     pieces = [
-        take_clip("01", STYLE / "c-opener-judge.png", 7.0),
-        take_clip("02", STYLE / "c-02-phone.png", 10.0),
-        take_clip("02b", STYLE / "c-02-proud.png", 8.5),
+        take_clip("01w", STYLE / "c-opener-judge.png", 4.0),
+        take_clip("01c", STYLE / "c-phone-cu.png", 4.0),
+        take_clip("02t", STYLE / "c-talk-cu.png", 6.0),
+        take_clip("02s", STYLE / "c-son-look.png", 4.0),
+        take_clip("02r", STYLE / "c-02-reject.png", 5.0),
+        take_clip("02p", STYLE / "c-02-proud.png", 6.0),
         take_clip("years", STYLE / "c-years-later.png", 2.4),
-        take_clip("03", STYLE / "c-03-silent.png", 3.5),
-        take_clip("04", STYLE / "c-04-talk.png", 9.8),
-        take_clip("05", STYLE / "c-05-defends.png", 11.3),
-        take_clip("06", STYLE / "c-06-vay.png", 5.4),
-        take_clip("07", STYLE / "c-07-dont.png", 4.0),
+        take_clip("03", STYLE / "c-03-silent.png", 4.0),
+        take_clip("04m", STYLE / "c-04-talk.png", 5.0),
+        take_clip("04c", STYLE / "c-father-cu.png", 6.0),
+        take_clip("05w", STYLE / "c-05-defends.png", 6.0),
+        take_clip("05c", STYLE / "c-defend-cu.png", 7.0),
+        take_clip("06", STYLE / "c-06-vay.png", 6.0),
+        take_clip("07", STYLE / "c-07-dont.png", 5.0),
         take_clip("08", STYLE / "c-08-endcard.png", 5.0),
     ]
 
@@ -132,12 +138,12 @@ def main() -> None:
     silent = WORK / "silent.mp4"
     run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(silent)])
 
-    d01, d02, d02b, d_years, d03, d04, d05, d06 = (dur(p) for p in normed[:8])
-    t_a = d01
-    t_d = d01 + d02 + d02b + d_years + d03
-    t_b = t_d + d04
-    t_e = t_b + d05
-    t_c = t_e + d06
+    ds = [dur(p) for p in normed]
+    t_a = ds[0] + ds[1]
+    t_d = t_a + ds[2] + ds[3] + ds[4] + ds[5] + ds[6] + ds[7]
+    t_b = t_d + ds[8] + ds[9]
+    t_e = t_b + ds[10] + ds[11]
+    t_c = t_e + ds[12]
     print(f"offsets a={t_a:.3f} d={t_d:.3f} b={t_b:.3f} e={t_e:.3f} c={t_c:.3f}")
 
     filt = (
@@ -157,17 +163,17 @@ def main() -> None:
             "-i",
             str(silent),
             "-i",
-            str(VO / "shushen-judge.mp3"),
+            str(VO_SLOW / "shushen-judge.mp3"),
             "-i",
-            str(VO / "shushen-a.mp3"),
+            str(VO_SLOW / "shushen-a.mp3"),
             "-i",
-            str(VO / "father-d.mp3"),
+            str(VO_SLOW / "father-d.mp3"),
             "-i",
-            str(VO / "shushen-b.mp3"),
+            str(VO_SLOW / "shushen-b.mp3"),
             "-i",
-            str(VO / "father-e.mp3"),
+            str(VO_SLOW / "father-e.mp3"),
             "-i",
-            str(VO / "shushen-c.mp3"),
+            str(VO_SLOW / "shushen-c.mp3"),
             "-filter_complex",
             filt,
             "-map",
