@@ -1,23 +1,29 @@
 #!/usr/bin/env python3
 """Склейка живого варианта А.
 
-Завязка — бракует фото, без взмаха. Скачок времени — отец сидит молча.
-Голос отца садится на первый кадр клипа 04, не на немой жест.
+Завязка — бракует фото. Между молодым сыном и 28 годами — плашка
+«Несколько лет спустя». Отец сначала сидит молча; когда говорит,
+рот идёт от RMS голоса, рука не бьёт по столу.
 """
 
 from __future__ import annotations
 
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path("/workspace/one-soul-series-1")
+sys.path.insert(0, str(ROOT / "preview"))
+import lipsync  # noqa: E402
+
 CLIPS = ROOT / "preview" / "variant-a-clips"
 VO = ROOT / "voice" / "renders"
 SB = ROOT / "storyboard"
 WORK = Path("/tmp/mux-living")
 OUT = ROOT / "preview" / "series1-variant-a-living.mp4"
 ART = Path("/opt/cursor/artifacts/one-soul-listen/series1-variant-a-living.mp4")
+ART_ROOT = Path("/opt/cursor/artifacts/series1-variant-a-living.mp4")
 
 
 def dur(path: Path) -> float:
@@ -38,7 +44,7 @@ def dur(path: Path) -> float:
 
 
 def run(cmd: list[str]) -> None:
-    print("+", " ".join(cmd[:12]))
+    print("+", " ".join(cmd[:14]))
     subprocess.check_call(cmd)
 
 
@@ -46,8 +52,63 @@ def ms(t: float) -> int:
     return int(round(t * 1000))
 
 
+def make_years_card(dest: Path) -> None:
+    run(
+        [
+            "ffmpeg",
+            "-y",
+            "-loop",
+            "1",
+            "-framerate",
+            "24",
+            "-i",
+            str(SB / "sb-years-later.png"),
+            "-vf",
+            "scale=1120:1991:force_original_aspect_ratio=increase,"
+            "crop=1080:1920:'(iw-ow)*t/2.4':'(ih-oh)*t/2.4',setsar=1",
+            "-t",
+            "2.4",
+            "-r",
+            "24",
+            "-c:v",
+            "libx264",
+            "-pix_fmt",
+            "yuv420p",
+            "-preset",
+            "medium",
+            "-crf",
+            "18",
+            "-an",
+            str(dest),
+        ]
+    )
+
+
 def main() -> None:
     WORK.mkdir(parents=True, exist_ok=True)
+    CLIPS.mkdir(parents=True, exist_ok=True)
+
+    years = CLIPS / "years-later.mp4"
+    make_years_card(years)
+
+    talk04 = CLIPS / "04-talk.mp4"
+    lipsync.render(
+        VO / "father-d.mp3",
+        SB / "sb-04-mouth-closed.png",
+        SB / "sb-04-mouth-talk.png",
+        SB / "sb-04-mouth-talk.png",
+        talk04,
+        min_seconds=9.8,
+    )
+    talk06 = CLIPS / "06-talk.mp4"
+    lipsync.render(
+        VO / "father-e.mp3",
+        SB / "sb-06-mouth-closed.png",
+        SB / "sb-06-mouth-talk.png",
+        SB / "sb-06-mouth-talk.png",
+        talk06,
+        min_seconds=5.4,
+    )
 
     kb = WORK / "03-silent.mp4"
     run(
@@ -114,10 +175,11 @@ def main() -> None:
         CLIPS / "01.mp4",
         CLIPS / "02.mp4",
         CLIPS / "02b.mp4",
+        years,
         kb,
-        CLIPS / "04.mp4",
+        talk04,
         CLIPS / "05.mp4",
-        CLIPS / "06.mp4",
+        talk06,
         CLIPS / "07.mp4",
         end,
     ]
@@ -166,15 +228,15 @@ def main() -> None:
         ]
     )
 
-    d01, d02, d02b, d03, d04, d05, d06 = (dur(p) for p in normed[:7])
+    d01, d02, d02b, d_years, d03, d04, d05, d06 = (dur(p) for p in normed[:8])
     t_a = d01
-    t_d = d01 + d02 + d02b + d03
+    t_d = d01 + d02 + d02b + d_years + d03
     t_b = t_d + d04
     t_e = t_b + d05
     t_c = t_e + d06
     print(
-        f"offsets judge=0.000 a={t_a:.3f} father-d={t_d:.3f} "
-        f"b={t_b:.3f} e={t_e:.3f} c={t_c:.3f}"
+        f"offsets judge=0.000 a={t_a:.3f} years={d01+d02+d02b:.3f} "
+        f"father-d={t_d:.3f} b={t_b:.3f} e={t_e:.3f} c={t_c:.3f}"
     )
 
     filt = (
@@ -235,8 +297,10 @@ def main() -> None:
 
     ART.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(OUT, ART)
+    shutil.copy2(OUT, ART_ROOT)
     print("wrote", OUT)
     print("copied", ART)
+    print("copied", ART_ROOT)
 
 
 if __name__ == "__main__":
