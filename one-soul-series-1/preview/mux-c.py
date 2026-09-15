@@ -48,7 +48,7 @@ def ms(t: float) -> int:
     return int(round(t * 1000))
 
 
-def kenburns(src: Path, dest: Path, seconds: float) -> None:
+def kenburns(src: Path, dest: Path, seconds: float) -> Path:
     run(
         [
             "ffmpeg",
@@ -78,6 +78,7 @@ def kenburns(src: Path, dest: Path, seconds: float) -> None:
             str(dest),
         ]
     )
+    return dest
 
 
 def take_i2v(name: str, still: Path, seconds: float) -> Path:
@@ -93,6 +94,9 @@ def take_i2v(name: str, still: Path, seconds: float) -> Path:
 
 def flap(audio: Path, closed: Path, opened: Path, dest: Path) -> Path:
     dest.parent.mkdir(parents=True, exist_ok=True)
+    if dest.exists() and dest.stat().st_size > 10000:
+        print("reuse", dest.name)
+        return dest
     print("lipsync", dest.name, "from", audio.name)
     lipsync.render(audio, closed, opened, opened, dest)
     return dest
