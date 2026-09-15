@@ -14,6 +14,20 @@ MCP подключён: модель `sync_so` (Sync Lipsync 3). Cost-preflight 
 
 Склейка: `preview/mux-c-lipsync.py` (картинка поверх живого В, дорожка звука не трогается).
 
+## Проба целого куска (не lipsync на застывший кадр)
+
+Финал «Ты не понимаешь, так что не вмешивайся» сгенерирован целиком из `style/c-07-dont.png`:
+
+| Файл | Что это |
+|---|---|
+| `preview/piece-end-wan27.mp4` | Wan 2.7, 6 с. Картинка + **наш** Sulafat. Рука живая. |
+| `preview/piece-end-kling30.mp4` | Kling 3.0, 8 с. Своя речь модели. Рука живая. |
+
+https://github.com/SwaTik91/Synagogue-multic/raw/cursor/one-soul-series1-bible-28ef/one-soul-series-1/preview/piece-end-wan27.mp4  
+https://github.com/SwaTik91/Synagogue-multic/raw/cursor/one-soul-series1-bible-28ef/one-soul-series-1/preview/piece-end-kling30.mp4
+
+Если кусок ок — тем же способом следующие реплики, не весь 76-секундный ролик сразу.
+
 ## Пакеты для следующих реплик
 
 В `01-end/` и `02-around-50s/`: `picture.mp4` + `voice.mp3`.  
