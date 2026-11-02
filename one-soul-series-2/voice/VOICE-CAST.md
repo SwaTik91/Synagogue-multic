@@ -67,7 +67,7 @@ Sulafat и Charon в этой серии не звучат.
 
 | Кто | Файл 0.88 | Длина |
 |---|---|---|
-| Моргол | `renders/slow/morgol.mp3` | 31,3 с |
+| Моргол | `renders/slow/morgol.mp3` | 28,4 с |
 | Ихил | `renders/slow/ikhil.mp3` | 54,1 с |
 | Закадр | `renders/slow/narrator.mp3` | 7,9 с |
 
