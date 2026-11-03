@@ -23,7 +23,6 @@ WORK = Path("/tmp/mux-series2")
 # subtitle clauses split on the spoken bars
 PIECES = [
     ("01", PRE / "silent/k01-street.mp4", None, 4.0, "open", 0.0, None),
-    ("02", PRE / "silent/k02-couple.mp4", None, 3.0, "open", 0.0, None),
     ("03", PRE / "talk/k3-hello.mp4", CUTS / "morgol-k3.mp3", None, "under", 0.0,
      ["Ой, Ихил!", "Сынок, это ты?!"]),
     ("02b", PRE / "silent/k02b-look.mp4", None, 1.0, "open", 0.0, None),
@@ -44,7 +43,7 @@ PIECES = [
      ["Одни нам отказали,", "другие мне не понравились.", "Я думал, больше вариантов нет!"]),
     ("08", PRE / "talk/k8-show.mp4", CUTS / "morgol-k8.mp3", None, "under", 0.0,
      ["Эх…", "Сейчас я тебе кое-что покажу."]),
-    ("09", PRE / "silent/k09-phone.mp4", None, 3.0, "open", 0.0, None),
+    ("09", PRE / "silent/k09-phone-photo.mp4", None, 3.0, "open", 0.0, None),
     ("10a", PRE / "silent/k10a-interest.mp4", None, 1.0, "open", 0.0, None),
     ("10b", PRE / "cards/k10b-married.mp4", CUTS / "ikhil-k10.mp3", None, "under", 0.0,
      ["Ой, какая красивая!", "А почему я её не видел?"]),
