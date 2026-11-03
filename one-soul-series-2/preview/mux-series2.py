@@ -28,7 +28,7 @@ PIECES = [
     ("02b", PRE / "silent/k02b-look.mp4", None, 1.0, "open", 0.0, None),
     ("04a", PRE / "silent/k04a-sleeve.mp4", None, 1.0, "open", 0.0, None),
     ("04b", PRE / "talk/k4b-thirty.mp4", CUTS / "morgol-k4a.mp3", None, "under", 0.0,
-     ["Ихил!", "Ляя.", "Тебе уже под тридцать!"]),
+     ["Ихил!", "Ляааа.", "Тебе уже под тридцать!"]),
     ("04c", PRE / "talk/k4c-why.mp4", CUTS / "morgol-k4b.mp3", None, "under", 0.0,
      ["Почему ты так долго выбираешь?"]),
     ("05a", PRE / "talk/k5a-years.mp4", CUTS / "morgol-k5a.mp3", None, "under", 0.0,
