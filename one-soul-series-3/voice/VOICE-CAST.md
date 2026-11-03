@@ -28,9 +28,9 @@ Sulafat и Charon в этой серии не звучат. Шушэн и оте
 |---|---|---|
 | Раввин | `renders/slow/rabbi.mp3` | 42,3 с |
 | Кадр 18 | `renders/cuts/rabbi-k18.mp3` | 7,2 с |
-| Кадр 19 | `renders/cuts/rabbi-k19.mp3` | 9,4 с |
-| Кадр 20 | `renders/cuts/rabbi-k20.mp3` | 9,6 с |
-| Кадр 21 | `renders/cuts/rabbi-k21.mp3` | 8,8 с |
+| Кадр 19 | `renders/cuts/rabbi-k19.mp3` | 9,5 с |
+| Кадр 20 | `renders/cuts/rabbi-k20.mp3` | 9,7 с |
+| Кадр 21 | `renders/cuts/rabbi-k21.mp3` | 8,9 с |
 | Кадр 22 | `renders/cuts/rabbi-k22.mp3` | 7,2 с |
 
 На бумаге речь занимала 00:30. В утверждённом темпе она 42 с, и её не режем. В сценарии кабинет стоит на 01:22–02:04, плашка на 02:04–02:09.
