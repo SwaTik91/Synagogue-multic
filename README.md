@@ -22,7 +22,7 @@
 
 ## Серия 2. «Сын узнаёт правду»
 
-Около 1:35, вертикаль 9:16. Сценарий: [one-soul-series-2/SCRIPT.md](one-soul-series-2/SCRIPT.md).
+Около 1:35, вертикаль 9:16. Сценарий: [one-soul-series-2/SCRIPT.md](one-soul-series-2/SCRIPT.md). Правила, чтобы следующие серии не повторяли дорогие ошибки: [PRODUCTION.md](PRODUCTION.md).
 
 ## Серия 3. «Выбор сердца и одна душа»
 
