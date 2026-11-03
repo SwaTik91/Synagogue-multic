@@ -31,7 +31,9 @@ PIECES = [
      ["Ихил!", "Ляааа.", "Тебе уже под тридцать!"]),
     ("04c", PRE / "talk/k4c-why.mp4", CUTS / "morgol-k4b.mp3", None, "under", 0.0,
      ["Почему ты так долго выбираешь?"]),
-    ("05a", PRE / "talk/k5a-years.mp4", CUTS / "morgol-k5a.mp3", None, "under", 0.0,
+    # 3.66 ends on «подряд». The next third of a second is already the start of «лучшие»,
+    # and the following shot says that word again.
+    ("05a", PRE / "talk/k5a-years.mp4", CUTS / "morgol-k5a.mp3", 3.66, "under", 0.0,
      ["Я твоей маме Шушэн", "пять лет подряд"]),
     ("05b", PRE / "talk/k5b-girls.mp4", CUTS / "morgol-k5b.mp3", None, "under", 0.0,
      ["лучшие варианты нашей общины отправляла!", "Столько хороших девушек было!"]),
