@@ -130,6 +130,7 @@ def main() -> None:
     WORK.mkdir(parents=True, exist_ok=True)
     make_street()
     normed: list[Path] = []
+    wavs: list[Path] = []
     timeline: list[tuple[str, float, float, str, float, list[str] | None, float]] = []
     clock = 0.0
     for key, src, voice, trim, street, tail_off, lines in PIECES:
@@ -164,7 +165,17 @@ def main() -> None:
         ]
         run(cmd)
         got = dur(dest)
+        # Audio of each piece is padded to the picture, then joined as samples.
+        # Copying the AAC packets instead leaves the voice late at the next cut.
+        wav = WORK / f"a-{key}.wav"
+        run([
+            "ffmpeg", "-y", "-i", str(dest),
+            "-vn", "-ac", "1", "-ar", str(SR),
+            "-af", f"apad=whole_dur={got:.6f},atrim=0:{got:.6f},asetpts=PTS-STARTPTS",
+            "-c:a", "pcm_s16le", str(wav),
+        ])
         normed.append(dest)
+        wavs.append(wav)
         timeline.append((key, clock, got, street, tail_off, lines, spoken))
         print(f"  {key:4} {got:6.3f}s  street={street:5}  at {clock:7.3f}")
         clock += got
@@ -175,7 +186,9 @@ def main() -> None:
     run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(listing), "-c", "copy", str(picture)])
 
     dialogue = WORK / "dialogue.wav"
-    run(["ffmpeg", "-y", "-i", str(picture), "-vn", "-ac", "1", "-ar", str(SR), "-c:a", "pcm_s16le", str(dialogue)])
+    wlist = WORK / "wavs.txt"
+    wlist.write_text("".join(f"file '{p}'\n" for p in wavs))
+    run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(wlist), "-c", "copy", str(dialogue)])
     bed = _envelope(dialogue, timeline)
     mixed = WORK / "mixed.wav"
     _mix(dialogue, bed, mixed)
