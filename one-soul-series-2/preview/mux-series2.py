@@ -21,6 +21,9 @@ WORK = Path("/tmp/mux-series2")
 # key, video, voice cut or None, trim seconds or None (voice+pad / full),
 # street: open | under | fade | low | off, tail of the piece with street at 0,
 # subtitle clauses split on the spoken bars
+# 05b's file starts with silence, then the vowel of «лучшие». The Л itself
+# is the last third of a second of 05a. Drop that pad so the vowel continues.
+HEAD = {"05b": 0.04}
 PIECES = [
     ("01", PRE / "silent/k01-street.mp4", None, 4.0, "open", 0.0, None),
     ("03", PRE / "talk/k3-hello.mp4", CUTS / "morgol-k3.mp3", None, "under", 0.0,
@@ -31,9 +34,9 @@ PIECES = [
      ["Ихил!", "Ляааа.", "Тебе уже под тридцать!"]),
     ("04c", PRE / "talk/k4c-why.mp4", CUTS / "morgol-k4b.mp3", None, "under", 0.0,
      ["Почему ты так долго выбираешь?"]),
-    # 3.66 ends on «подряд». The next third of a second is already the start of «лучшие»,
-    # and the following shot says that word again.
-    ("05a", PRE / "talk/k5a-years.mp4", CUTS / "morgol-k5a.mp3", 3.66, "under", 0.0,
+    # 4.00 keeps the soft Л of «лучшие». At 3.66 that attack was cut away and
+    # the next shot began on the vowel, so the word stumbled.
+    ("05a", PRE / "talk/k5a-years.mp4", CUTS / "morgol-k5a.mp3", 4.00, "under", 0.0,
      ["Я твоей маме Шушэн", "пять лет подряд"]),
     ("05b", PRE / "talk/k5b-girls.mp4", CUTS / "morgol-k5b.mp3", None, "under", 0.0,
      ["лучшие варианты нашей общины отправляла!", "Столько хороших девушек было!"]),
@@ -147,8 +150,14 @@ def main() -> None:
             seconds = min(full, spoken + 0.18)
         else:
             seconds = min(full, float(trim))
+        head = HEAD.get(key, 0.0)
+        if head:
+            seconds = min(seconds, full - head)
         dest = WORK / f"n-{key}.mp4"
-        cmd = ["ffmpeg", "-y", "-i", str(src), "-t", f"{seconds:.3f}", "-vf", VF]
+        cmd = ["ffmpeg", "-y", "-i", str(src)]
+        if head:
+            cmd += ["-ss", f"{head:.3f}"]
+        cmd += ["-t", f"{seconds:.3f}", "-vf", VF]
         if voice is None and key != "10b" and key != "11a" and key != "12b":
             # silent picture, or the end card. Cards keep their own thud.
             if key == "17" or not _has_audio(src):
@@ -187,6 +196,10 @@ def main() -> None:
     picture = WORK / "picture.mp4"
     run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(listing), "-c", "copy", str(picture)])
 
+    # 15 ms across the «лучшие» join, so the Л from 05a meets the vowel in 05b
+    # without a click. Length stays the same: the blend replaces the edges.
+    _crossfade_edges(wavs[_piece_index("05a")], wavs[_piece_index("05b")], 0.015)
+
     dialogue = WORK / "dialogue.wav"
     wlist = WORK / "wavs.txt"
     wlist.write_text("".join(f"file '{p}'\n" for p in wavs))
@@ -206,6 +219,33 @@ def main() -> None:
     ART.parent.mkdir(parents=True, exist_ok=True)
     subprocess.check_call(["cp", str(OUT), str(ART)])
     print("wrote", OUT, "dur", dur(OUT))
+
+
+def _piece_index(key: str) -> int:
+    for i, piece in enumerate(PIECES):
+        if piece[0] == key:
+            return i
+    raise SystemExit(f"no piece {key}")
+
+
+def _write_wav(path: Path, samples: np.ndarray) -> None:
+    clipped = np.clip(samples * 32768.0, -32767, 32767).astype(np.int16)
+    with wave.open(str(path), "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(SR)
+        w.writeframes(clipped.tobytes())
+
+
+def _crossfade_edges(left: Path, right: Path, fade: float) -> None:
+    a = _read_wav(left)
+    b = _read_wav(right)
+    n = int(fade * SR)
+    w = np.linspace(1.0, 0.0, n, dtype=np.float32)
+    a[-n:] = a[-n:] * w + b[:n] * (1.0 - w)
+    b = np.concatenate([b[n:], np.zeros(n, dtype=np.float32)])
+    _write_wav(left, a)
+    _write_wav(right, b)
 
 
 def _has_audio(path: Path) -> bool:
