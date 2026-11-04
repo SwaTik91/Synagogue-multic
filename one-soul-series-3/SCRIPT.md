@@ -106,7 +106,7 @@
 
 ### Кадр 8 — 00:37–00:43
 
-Ихил чуть наклоняется, показывает на фото. Стоп-кадр: `stills/k08-point.png`. Голос: `voice/renders/cuts/ikhil-k08.mp3`, 6,8 с, Achird. Пять пальцев на руке, которой он показывает. Ролик: `preview/k08-match.mp4`, Venice Wan 2.6 Flash, 1080p, 10 с, 0,83 $. Звук совпал с файлом. Возраст Моргол как в кадрах 3 и 6. Слишком старый проход лежит в `preview/rejected/k08-venice-old.mp4` и `stills/rejected/k08-point-old.png`. Яркий проход — `preview/rejected/k08-venice-bright.mp4`. Higgsfield — `preview/rejected/k08-higgs.mp4`.
+Ихил чуть наклоняется, показывает на фото. Стоп-кадр: `stills/k08-point.png`. Голос: `voice/renders/cuts/ikhil-k08.mp3`, 6,8 с, Achird. Пять пальцев на руке, которой он показывает. Ролик: `preview/k08-match.mp4`, Venice Wan 2.6 Flash, 1080p, 10 с, 0,83 $. Звук совпал с файлом. Пользователь: «Да сейчас лучше». Возраст Моргол как в кадрах 3 и 6. Слишком старый проход лежит в `preview/rejected/k08-venice-old.mp4` и `stills/rejected/k08-point-old.png`. Яркий проход — `preview/rejected/k08-venice-bright.mp4`. Higgsfield — `preview/rejected/k08-higgs.mp4`.
 
 **Ихил:**
 
@@ -114,7 +114,7 @@
 
 ### Кадр 9 — 00:43–00:49
 
-Моргол расцветает. Телефон выше, кивает. Стоп-кадр: `stills/k09-yes.png`. Голос: `voice/renders/cuts/morgol-k09.mp3`, 6,2 с, Gacrux, вырезан из дубля, который начинается с реплик серии 2. На руке с телефоном пять пальцев. Ролик: `preview/k09-match.mp4`, Venice Wan 2.6 Flash, 1080p, 10 с, 0,83 $. Звук совпал с файлом. Возраст Моргол как в кадрах 3 и 6. Слишком старый проход лежит в `preview/rejected/k09-venice-old.mp4` и `stills/rejected/k09-yes-old.png`. Яркий проход — `preview/rejected/k09-venice-bright.mp4`. Higgsfield — `preview/rejected/k09-higgs.mp4`.
+Моргол расцветает. Телефон выше, кивает. Стоп-кадр: `stills/k09-yes.png`. Голос: `voice/renders/cuts/morgol-k09.mp3`, 6,2 с, Gacrux, вырезан из дубля, который начинается с реплик серии 2. На руке с телефоном пять пальцев. Ролик: `preview/k09-match.mp4`, Venice Wan 2.6 Flash, 1080p, 10 с, 0,83 $. Звук совпал с файлом. Пользователь: «Да сейчас лучше». Возраст Моргол как в кадрах 3 и 6. Слишком старый проход лежит в `preview/rejected/k09-venice-old.mp4` и `stills/rejected/k09-yes-old.png`. Яркий проход — `preview/rejected/k09-venice-bright.mp4`. Higgsfield — `preview/rejected/k09-higgs.mp4`.
 
 **Моргол** (радостно):
 
