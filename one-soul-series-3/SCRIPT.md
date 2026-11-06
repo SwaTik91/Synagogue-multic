@@ -176,7 +176,7 @@
 
 Жениха и невесты в кадре нет. Отец и Шушэн в той же праздничной одежде, что в кадре 15, ноги и туфли видны. Моргол того возраста, который пользователь оставил: седина у висков, горчичная косынка. Фигура обычная, как на листе, не худая и не толстая. На свадьбе она не в уличном пальто: праздничное бордовое платье, обе ноги и обе туфли в кадре.
 
-Стоп-кадр: `stills/k16-dance.png`. Ролик: `preview/k16-match.mp4`, Venice Wan 2.6 Flash, 1080p, 5 с, 0,41 $. Звуковой дорожки нет: музыку решат позже. Пальто без ног: `preview/rejected/k16-coat.mp4`, `stills/rejected/k16-dance-coat.png`. Молодая худая: `preview/rejected/k16-young.mp4`, `stills/rejected/k16-dance-young.png`. Слишком толстая: `preview/rejected/k16-heavy.mp4`, `stills/rejected/k16-dance-heavy.png`.
+Стоп-кадр: `stills/k16-dance.png`. Ролик: `preview/k16-match.mp4`, Venice Wan 2.6 Flash, 1080p, 5 с, 0,41 $. Звуковой дорожки нет: музыку решат позже. Оба глаза Шушэн до конца смотрят на отца. Пальто без ног: `preview/rejected/k16-coat.mp4`, `stills/rejected/k16-dance-coat.png`. Молодая худая: `preview/rejected/k16-young.mp4`, `stills/rejected/k16-dance-young.png`. Слишком толстая: `preview/rejected/k16-heavy.mp4`, `stills/rejected/k16-dance-heavy.png`. Глаза врозь на последней секунде: `preview/rejected/k16-eyes.mp4`.
 
 ### Кадр 17 — 01:19–01:22
 
