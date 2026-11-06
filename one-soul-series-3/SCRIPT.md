@@ -210,7 +210,7 @@
 
 Медленный наезд. Правая рука чуть поднимается на смысле. Пять пальцев, без лишних и сросшихся.
 
-Старт с `stills/k18-desk.png`. Голос: `voice/renders/cuts/rabbi-k19.mp3`, 11,6 с, Sadaltager. «Кубой» произносится ку-БОЙ, ударение на О. Ролик: `preview/k19-match.mp4`, Venice Wan 2.6 Flash, 1080p, 15 с, 1,24 $. Реплика длиннее десяти секунд, модель берёт 15. Дорожка совпала с файлом. Прежнее ударение на У: `voice/renders/cuts/rejected/rabbi-k19-ku.mp3` и `preview/rejected/k19-stress-u.mp4`.
+Старт с `stills/k18-desk.png`. Картинка — первый проход, 10 с. Голос той же записи Sadaltager, что в первом проходе: заново записана только «Кубой», ку-БОЙ, ударение на О. Остальные слова не перезаписывались. Файл: `voice/renders/cuts/rabbi-k19.mp3`. Ролик: `preview/k19-match.mp4`. Полная новая запись фразы, из-за которой сменилась подача: `preview/rejected/k19-new-voice.mp4`, `voice/renders/cuts/rejected/rabbi-k19-new-voice.mp3`. Старое ударение на У внутри первого дубля: `voice/renders/cuts/rejected/rabbi-k19-ku.mp3`, картинка `preview/rejected/k19-stress-u.mp4`.
 
 **Раввин:**
 
