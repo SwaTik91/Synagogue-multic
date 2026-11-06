@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+# Полная склейка серии 3 больше лимита GitHub. Оригиналы кадров лежат в preview/.
+one-soul-series-3/preview/series3.mp4
