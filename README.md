@@ -19,3 +19,11 @@
 | **Вариант А (простой, живые кадры)** | [one-soul-series-1/preview/series1-variant-a-living.mp4](one-soul-series-1/preview/series1-variant-a-living.mp4) |
 
 Главный замок мира: `one-soul-series-1/bible/00-universe-lock.png`.
+
+## Серия 2. «Сын узнаёт правду»
+
+Около 1:35, вертикаль 9:16. Сценарий: [one-soul-series-2/SCRIPT.md](one-soul-series-2/SCRIPT.md). Правила, чтобы следующие серии не повторяли дорогие ошибки: [PRODUCTION.md](PRODUCTION.md).
+
+## Серия 3. «Выбор сердца и одна душа»
+
+Около 1:45, вертикаль 9:16. Сценарий: [one-soul-series-3/SCRIPT.md](one-soul-series-3/SCRIPT.md). Покадровка с речью раввина сейчас доходит до 1:57. Речь не режется.
