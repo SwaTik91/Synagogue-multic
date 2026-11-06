@@ -1,8 +1,8 @@
-import {Video} from "@remotion/media";
+import {Audio, Video} from "@remotion/media";
 import {TransitionSeries, linearTiming} from "@remotion/transitions";
 import {fade} from "@remotion/transitions/fade";
 import React from "react";
-import {staticFile, useVideoConfig} from "remotion";
+import {interpolate, staticFile, useCurrentFrame, useVideoConfig} from "remotion";
 
 const fill = {
   width: "100%",
@@ -25,6 +25,9 @@ const Shot: React.FC<{readonly file: string; readonly name: string}> = ({
 
 export const SERIES_FPS = 30;
 const FADE = 12;
+// Кадры 10–17. Один мотив на все тихие кадры, без склеек между ними.
+const MUSIC_FROM = 1936;
+const MUSIC_FRAMES = 1176;
 
 // Речь целиком плюс короткий хвост, чтобы не срезать последнее слово.
 // Немые куски и заставка держатся целиком. Бумажные 2:09 не ужимаются.
@@ -48,10 +51,23 @@ export const SERIES_FRAMES =
   FADE * 2;
 
 export const Series3: React.FC = () => {
+  const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const dissolve = linearTiming({durationInFrames: Math.round(0.4 * fps)});
+  const musicVolume = interpolate(
+    frame,
+    [
+      MUSIC_FROM,
+      MUSIC_FROM + 12,
+      MUSIC_FROM + MUSIC_FRAMES - 15,
+      MUSIC_FROM + MUSIC_FRAMES,
+    ],
+    [0, 1, 1, 0],
+    {extrapolateLeft: "clamp", extrapolateRight: "clamp"},
+  );
 
   return (
+    <>
     <TransitionSeries name="Серия 3">
       <TransitionSeries.Sequence name="Кадр 1" durationInFrames={217}>
         <Shot file="shots/k01.mp4" name="Улица" />
@@ -125,5 +141,13 @@ export const Series3: React.FC = () => {
         <Shot file="shots/endcard.mp4" name="Логотип" />
       </TransitionSeries.Sequence>
     </TransitionSeries>
+    <Audio
+      name="Праздничный мотив"
+      src={staticFile("music/festive.mp3")}
+      from={MUSIC_FROM}
+      durationInFrames={MUSIC_FRAMES}
+      volume={musicVolume}
+    />
+    </>
   );
 };
